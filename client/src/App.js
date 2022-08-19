@@ -2,6 +2,7 @@ import './App.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import React from 'react'
+import { StyleSheet, View} from "react-native-web"
 
 function App() {
   const [value, setValue] = React.useState('');
@@ -42,6 +43,13 @@ function App() {
     setTranslated('')
   }
 
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 20,
+    },
+  });
+
   return (
     <div>
       <div>
@@ -61,11 +69,11 @@ function App() {
           justifyContent: 'center',
         }}>
 
-        <div>
+        <div
+          syle={{
+            display: 'flex',
+          }}>
           <TextField
-            style={{
-              width: "500px",
-            }}
             id="outlined-multiline-static"
             label="Texts"
             multiline
@@ -75,25 +83,29 @@ function App() {
           />
         </div>
         
-        <Button 
-          variant="contained"
-          onClick={buttonClick}
-          style={{
-            margin: '20px',
-          }}>라인 브레이크</Button>
-
-        <Button 
-          variant="contained"
-          onClick={clearClick}
-          style={{
-            margin: '20px',
-          }}>삭제</Button>
-        
-        <div>
-          <TextField
+        <View style={[styles.containor, {
+          flexDirection: "column"
+        }]}>
+          <Button 
+            variant="contained"
+            onClick={buttonClick}
             style={{
-              width: "500px",
-            }}
+              margin: '20px',
+            }}>라인 브레이크</Button>
+
+          <Button 
+            variant="contained"
+            onClick={clearClick}
+            style={{
+              margin: '20px',
+            }}>삭제</Button>
+        </View>
+        
+        <div
+          syle={{
+            display: 'flex',
+          }}>
+          <TextField
             id="outlined-multiline-static"
             label="Line Breaked Texts"
             multiline
