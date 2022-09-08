@@ -26,7 +26,7 @@ def translate():
         first = ' '.join(words[s:i])
 
         if i < len(words) - 10:
-            second = ' '.join(words[i:i+3])
+            second = ' '.join(words[i:i+5])
         else: second = ' '.join(words[i:len(words)+1])
             
         

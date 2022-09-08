@@ -25,3 +25,5 @@ yarn-error.log*
 flask-server/__pycache__
 flask-server/venv
 client/build
+
+test.py
