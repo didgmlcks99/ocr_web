@@ -16,7 +16,7 @@ function App() {
     console.log("button clicked!");
     setTranslated("loading...");
 
-    fetch("/translate", {
+    fetch("/server/translate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

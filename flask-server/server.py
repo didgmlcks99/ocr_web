@@ -9,7 +9,7 @@ import data
 model = mu.getModel('rnn-test11')
 ch2idx = data.getCh2idx()
 
-@app.route("/translate", methods=['POST'])
+@app.route("/server/translate", methods=['POST'])
 def translate():
     data = request.get_json()
     
@@ -38,7 +38,7 @@ def translate():
 
         print(first,end='-->')
         print(second,end='=')
-        print(output)
+        # print(output)
     print()
 
     split = ' '.join(words[s:len(words)+1])
@@ -47,7 +47,7 @@ def translate():
     result = '\n'.join(new_splitted)
     print(result)
 
-    print(output)
+    # print(output)
 
     return result
 
