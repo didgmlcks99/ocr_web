@@ -31,7 +31,7 @@ function App() {
         console.log(translated);
       });
 
-    alert("작성 완료");
+    // alert("작성 완료");
   };
 
   const clearClick = (event) => {
