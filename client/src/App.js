@@ -57,7 +57,7 @@ function App() {
             textAlign: "center",
           }}
         >
-          <h2 className="header">한글 라인 브레이커</h2>
+          <h2 className="header">한글 문장 경계 감지</h2>
         </div>
       </div>
 
