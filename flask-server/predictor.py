@@ -26,10 +26,10 @@ def predict(first, second, model, ch2idx):
 
     result = probs[0]*100
 
-    if result >= 20.00: output = 1
+    if result >= 30.00: output = 1
     else: output = 0
 
-    return str(output)
+    return str(output), result
 
     # print(f"{probs[0]*100:.2f}% that next line must be omitted.")
 

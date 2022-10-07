@@ -6,7 +6,7 @@ import model_util as mu
 import predictor
 import data
 
-model = mu.getModel('rnn-test11')
+model = mu.getModel('inverted_noGudu3')
 ch2idx = data.getCh2idx()
 
 @app.route("/server/translate", methods=['POST'])
@@ -26,11 +26,13 @@ def translate():
         first = ' '.join(words[s:i])
 
         if i < len(words) - 10:
-            second = ' '.join(words[i:i+5])
-        else: second = ' '.join(words[i:len(words)+1])
+            second = ' '.join(words[i:i+5])[::-1]
+        else: second = ' '.join(words[i:len(words)+1])[::-1]
             
         
-        output = predictor.predict(first, second, model, ch2idx)
+        output, perc = predictor.predict(first, second, model, ch2idx)
+
+        print(perc)
 
         if output == '0':
             s = i

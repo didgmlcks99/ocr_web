@@ -108,11 +108,14 @@ def encode(first, second, ch2idx, max_len):
 
 def syll_enc(data, stat, max_len, ch2idx):
 
-    if stat == 1:
-        data = (['<pad>'] * (max_len - len(data))) + data
-    else:
-        data += ['<pad>'] * (max_len - len(data))
+    # if stat == 1:
+    #     data = (['<pad>'] * (max_len - len(data))) + data
+    # else:
+    #     data += ['<pad>'] * (max_len - len(data))
     
+    # no need to change order of padding when inveresed
+    
+    data = (['<pad>'] * (max_len - len(data))) + data
     toked_id = [ch2idx.get(token, ch2idx['<unk>']) for token in data]
 
     return np.array(toked_id)
